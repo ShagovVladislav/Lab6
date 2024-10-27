@@ -14,7 +14,7 @@ namespace Lab6
             int k = GetValidInput("Введите количество попыток на угадывание числа:", "Установленное количество попыток");
 
             Random rnd = new();
-            int number = rnd.Next(0, n);
+            int number = rnd.Next(1, n);
             Trace.WriteLine($"{DateTime.Now}: [INFO] Сгенерированное число для угадывания: {number}");
 
             int win = Game(k, number, n);
@@ -77,7 +77,7 @@ namespace Lab6
                             break;
 
                         case int b when b < 0 || b > n:
-                            Console.WriteLine("Ваше число выходит из диапазона от 0 до {0}", n);
+                            Console.WriteLine("Ваше число выходит из диапазона от 1 до {0}", n);
                             Trace.WriteLine($"{DateTime.Now}: [WARNING] Число вне диапазона: {b}");
                             i--;
                             break;
